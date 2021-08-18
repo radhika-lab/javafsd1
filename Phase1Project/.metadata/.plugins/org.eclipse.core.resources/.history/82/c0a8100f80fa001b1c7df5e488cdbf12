@@ -1,0 +1,18 @@
+package com.lokedme;
+
+import com.lokedme.FileManager.List;
+
+public class LokerMe {
+	
+	static final String folderpath="D:\\JavaProjects\\LokerProject";
+
+	public static void main(String[] args) {
+		
+		// TODO Auto-generated method stub
+		List<String> fileNames=FileManager.getAllFiles(folderpath);
+		
+		for(String f:fileNames)
+		System.out.println(f);
+	}
+
+}

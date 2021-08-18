@@ -1,0 +1,49 @@
+package com.lokedme;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Scanner;
+
+
+
+public class LokerMe {
+	
+	static final String folderpath="D:\\JavaProjects";
+
+	public static void main(String[] args) {
+		
+		// TODO Auto-generated method stub
+	/*List<String> fileNames= FileManager.getAllFiles(folderpath);
+		
+		for(String f:fileNames)
+		System.out.println(f);*/
+		
+		Scanner obj=new Scanner(System.in);
+		String fileName;
+		int linesCount;
+		List<String> content=new ArrayList<String>();
+		
+		System.out.println("Enter file name");
+		fileName= obj.nextLine();
+		
+		System.out.println("Enter how many lines in the file");
+		linesCount=Integer.parseInt(obj.nextLine());
+		
+		for(int i=1;i<=linesCount;i++)
+		{
+			System.out.println("Enter line"+":");
+			content.add(obj.nextLine());
+			
+		}
+		
+		boolean isSaved=FileManager.createFiles(fileName, fileName, content);
+		
+		if(isSaved)
+			System.out.println("File and data saved sucessfully");
+		else
+			System.out.println("Some error occureed");
+	
+		
+	}
+
+}

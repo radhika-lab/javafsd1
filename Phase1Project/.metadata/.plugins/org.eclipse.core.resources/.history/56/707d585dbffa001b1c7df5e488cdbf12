@@ -1,0 +1,23 @@
+package com.lokedme;
+
+import java.io.File;
+import java.util.ArrayList;
+import java.util.List;
+
+public class FileManager {
+   public static List<String> getAllFiles(String folderpath)
+   {
+	   File f1=new File(folderpath);
+	   
+	   File[] listofFiles = f1.listFiles();
+	   List<String> fileNames= new ArrayList<String>();
+	   
+	   for(File f:listofFiles)
+		   fileNames.add(f.getName());
+	   
+	   return fileNames;
+	   
+	   
+   }
+}
+
